@@ -1,0 +1,21 @@
+.newsItem{
+    /* width: 50%; */
+    width: 20rem;
+    height: 20rem;
+    display: flex;
+    flex-direction: column;
+    color: rgb(255, 255, 255);
+    /* background-color: rgb(156, 232, 233); */
+    border: 2px solid #0CD3E0;
+    box-sizing: border-box;
+    border-radius: 15px;
+    margin: 15px 15px;
+    padding: 10px;
+}
+.newsItem img{
+    width:100%;
+}
+.newsItem__title{
+    margin: 15px;
+    /* width:30%; */
+}
