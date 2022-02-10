@@ -1,10 +1,22 @@
-.search__input{
-    height: 30px;
-   
+.search{
+    z-index: 3;
+    position: relative;
+    
+}
+.search__form{
+    display: flex;
+    flex-direction: row;
 
 }
-.search__btn{
-    width: 30px;
+.search__input{
     height: 30px;
+    background-color: transparent;
+    border: 1px solid #0CD3E0;
+    border-radius: 5px;
+    color: rgb(255, 255, 255);
+}
+.search__btn{
     margin-right: 10px;
+    background-color: transparent;
+    border: none;
 }

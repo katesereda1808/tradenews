@@ -1,6 +1,7 @@
 import React,{useState} from "react";
 import "./Search.css";
 import store from "./redux/store";
+import loupe from "./images/search.svg";
 
 function Search(){
     const[search, setSearch] = useState('');
@@ -22,8 +23,9 @@ function Search(){
     return(
         <div className="search">
             <form className="search__form" onSubmit={searchSubmitHandler}>
-                <button type='submit' className="search__btn"/>
+                
                 <input onChange={searchHandler} className="search__input"></input>
+                <button type='submit' className="search__btn"><img src={loupe}/></button>
 
             </form>
             

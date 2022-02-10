@@ -8,14 +8,14 @@ const NewsPage =()=> {
     useEffect(()=>{
         store.subscribe(()=>{
             const globalState=store.getState();
-            console.log(globalState);
+            // console.log(globalState);
             setRequest(globalState.search);
-                fetch(`https://newsapi.org/v2/everything?q=${request}&apiKey=812129839886483c8a91c8ae3736295a`)
+                fetch(`https://newsapi.org/v2/everything?q=${globalState.search}&apiKey=812129839886483c8a91c8ae3736295a`)
                 .then(resp=>{
                 return resp.json();
                 })
                 .then(data=>{
-                // console.log(data);
+                console.log(data);
                 setNews(data.articles);
             })
         })

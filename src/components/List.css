@@ -1,0 +1,26 @@
+.list{
+    display: flex;
+    flex-direction: column;
+    width: 100px;
+    align-items: center;
+}
+.list_icon{
+    margin-bottom: 10px;
+}
+.list__container{
+    width: 300%;
+    height: 100px;
+    color: blue;
+    background-color: white;
+    z-index: 4;
+    position: relative;
+    left: 0%;
+    font-size: 14px;
+    overflow-y: scroll;
+    
+    overflow-wrap: break-word;
+    display: flex;
+}
+.list__search{
+    height: 20%;
+}
