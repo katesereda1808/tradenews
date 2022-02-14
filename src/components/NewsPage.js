@@ -26,7 +26,7 @@ const NewsPage =()=> {
         <>
         <div className="newsPage__container">
             {news.map(newsItem=>(
-                    <NewsItem urlToImage={newsItem.urlToImage} title={newsItem.title}/>
+                    <NewsItem urlToImage={newsItem.urlToImage} title={newsItem.title} url={newsItem.url} key={newsItem.url}/>
             ))}
         </div>
         </>

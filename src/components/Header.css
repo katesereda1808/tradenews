@@ -4,15 +4,16 @@
     justify-content:space-between;
     color: rgb(255, 255, 255);
     width: 100%;
-    height: fit-content;
-    /* height: 200px; */
+    /* height: fit-content; */
+    height: 200px;
     font-family: 'Spartan', sans-serif;
     font-size: 50px;
     font-weight: 500px;
     padding-left: 15px;
     padding-right: 15px;
-    overflow: hidden;
-    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-y: auto;
+    /* box-sizing: border-box; */
     position: relative;
 }
 #outline{
@@ -25,6 +26,7 @@
     position: relative;
 }
 .broken-line{
+    /* width: 100%; */
     position: absolute;
     z-index: 1;
 
@@ -38,4 +40,7 @@
     align-items: flex-start;
     right: 0%;
     z-index: 3;
+}
+.icon{
+    cursor: pointer;
 }

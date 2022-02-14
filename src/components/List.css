@@ -8,19 +8,81 @@
     margin-bottom: 10px;
 }
 .list__container{
-    width: 300%;
-    height: 100px;
-    color: blue;
-    background-color: white;
+    width: 200px;
+    height: 8.5rem;
+    color: rgb(255, 255, 255);
+    background-color: #010E17;
     z-index: 4;
-    position: relative;
-    left: 0%;
+    position: absolute;
+    right: -3%;
+    top: 30%;
+    z-index: 4;
     font-size: 14px;
     overflow-y: scroll;
-    
+    box-sizing: border-box;
+    justify-content: center;
     overflow-wrap: break-word;
     display: flex;
+    padding: 10px 10px;
+    border: 1px solid #0CD3E0;
+    border-radius: 5%;
 }
-.list__search{
-    height: 20%;
+.list__search_header{
+    width: 100%;
+    height: 22%;
+    display: flex;
+    border: 1px solid #0CD3E0;
+    border-radius: 3px;
+    box-sizing: border-box;
+    margin-bottom: 0.5rem;
+}
+.list__search_header input{
+    color: white;
+    background-color: transparent;
+    border: none;
+    padding: 0px 5px;
+    outline: none;
+    /* height: 1rem; */
+    
+}
+/* .list__search input{
+    width: 100%;
+} */
+.list__search_header button{
+    background-color: transparent;
+    border: none;
+    width: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+}
+.list__search_header .plus{
+    width: 0.8rem;
+    
+
+    
+}
+.dot{
+    width: 0.5rem;
+    margin-left: 2px;
+}
+.dot-container{
+    width: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+.list__delete-btn{
+    color: white;
+    background-color: black;
+
+}
+.list__row{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
 }

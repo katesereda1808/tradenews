@@ -1,11 +1,13 @@
 .search{
     z-index: 3;
     position: relative;
+
     
 }
 .search__form{
     display: flex;
     flex-direction: row;
+    width: 38%;
 
 }
 .search__input{
@@ -14,9 +16,15 @@
     border: 1px solid #0CD3E0;
     border-radius: 5px;
     color: rgb(255, 255, 255);
+    margin-right: 18px;
+    cursor: text;
+    /* margin-right: 10px; */
+    /* display: none; */
 }
+
 .search__btn{
     margin-right: 10px;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }

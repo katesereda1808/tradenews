@@ -17,5 +17,17 @@
 }
 .newsItem__title{
     margin: 15px;
-    /* width:30%; */
+    /* width:30%; */  
+}
+
+a:link{
+    color: white;
+    
+}
+a:hover{
+    color: #0CD3E0;
+}
+a:active{
+    color: #79e1e9;
+    outline: none;
 }

@@ -7,7 +7,7 @@ function SignIn(){
     
     return(
         <div className="signin">
-            <img className="signin_icon" src={account}/>
+            <img className="signin_icon icon" src={account}/>
            
 
         </div>
