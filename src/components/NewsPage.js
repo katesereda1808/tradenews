@@ -12,12 +12,33 @@ const NewsPage =()=> {
             setRequest(globalState.search);
                 fetch(`https://newsapi.org/v2/everything?q=${globalState.search}&apiKey=812129839886483c8a91c8ae3736295a`)
                 .then(resp=>{
-                return resp.json();
+                    if(resp.ok){
+                        return resp.json();
+                    }else{
+                        setNews(false);
+                    }
                 })
+                    
                 .then(data=>{
-                console.log(data);
-                setNews(data.articles);
-            })
+                    if(data){
+                        if(data.totalResults>0){
+                        console.log(data);
+                        setNews(data.articles)
+                        }else{
+                            setNews(false)
+                            console.log(news)
+                        }
+                        
+                        
+
+
+
+                    }
+                
+                })
+                .catch((error)=>{
+                    console.log('Error: '+ error);
+                })
         })
     }, [])
 
@@ -25,9 +46,20 @@ const NewsPage =()=> {
     return(
         <>
         <div className="newsPage__container">
+            {news?
+            <>
             {news.map(newsItem=>(
-                    <NewsItem urlToImage={newsItem.urlToImage} title={newsItem.title} url={newsItem.url} key={newsItem.url}/>
+                <NewsItem urlToImage={newsItem.urlToImage} title={newsItem.title} url={newsItem.url} key={newsItem.url}/>
             ))}
+            </>
+            :
+            <>
+            <div className="not_found"> По запросу ничего не найдено</div>
+            </>
+            
+            }
+
+            
         </div>
         </>
     )

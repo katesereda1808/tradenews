@@ -19,6 +19,7 @@
     z-index: 4;
     font-size: 14px;
     overflow-y: scroll;
+    overflow-x: hidden;
     box-sizing: border-box;
     justify-content: center;
     overflow-wrap: break-word;
@@ -38,13 +39,18 @@
 }
 .list__search_header input{
     color: white;
+    width: 80%;
     background-color: transparent;
     border: none;
     padding: 0px 5px;
     outline: none;
     /* height: 1rem; */
-    
 }
+/* .list__search_header input :active{
+    background-color: wh;
+
+
+} */
 /* .list__search input{
     width: 100%;
 } */
@@ -58,12 +64,11 @@
 
 
 }
-.list__search_header .plus{
+.list__search_header img{
     width: 0.8rem;
     
-
-    
 }
+
 .dot{
     width: 0.5rem;
     margin-left: 2px;
@@ -77,12 +82,16 @@
 }
 .list__delete-btn{
     color: white;
-    background-color: black;
-
+    background-color: transparent;
+    border: none;
+}
+.list__delete-btn img{
+    width: 1rem;
 }
 .list__row{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin-bottom: 0.5rem;
+    cursor: pointer;
 }

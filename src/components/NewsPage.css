@@ -8,3 +8,21 @@
 
 
 }
+.not_found{
+    color: rgb(255, 255, 255);
+    font-size: 200%;
+    z-index: 4;
+    height: 13rem;
+    width: 35rem;
+    border: 2px solid #0CD3E0;
+    border-radius: 15px;
+    text-align: center;
+    /* display: flex; */
+    vertical-align: middle;
+    padding-top: 15%;
+    
+
+    justify-self: center;
+    /* background-color: black; */
+
+}

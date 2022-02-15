@@ -4,6 +4,7 @@ import store from "./redux/store";
 import list from "./images/list.svg";
 import plus from "./images/plus.svg";
 import dot from "./images/dot.svg";
+import cross from "./images/cross-delete.svg";
 
 function List(){
     const [clickList, setCliskList] = useState(false);
@@ -17,7 +18,11 @@ function List(){
     let storageData = JSON.parse(getLocalStorageData);
 
     const handleListClick=()=>{
-        setCliskList(true);
+        if(clickList){
+            setCliskList(false);
+        }else{
+            setCliskList(true);
+        }
     }
     const hideTheList=()=>{
         console.log('blurrrr');
@@ -31,25 +36,27 @@ function List(){
             payload: {
                 search: e.target.innerText
             }
-
         })
     }
     
     const handleAddToList=(e)=>{
         e.preventDefault();
-        // console.log("add to list");
-        if (getLocalStorageData==null){
-            listArr=[];
-            // console.log(listArr)
-        } else {
-            listArr=storageData;
+        if(searchList.length>0){
+            if (getLocalStorageData==null){
+                listArr=[];
+                // console.log(listArr)
+            } else {
+                listArr=storageData;
+            }
+            // тут нужно добавить не только item, но и его пропсы(id)
+            listArr.unshift(searchList);
+            localStorage.setItem('list', JSON.stringify(listArr));
+            // console.log(listArr);
+            setListItems(storageData);
+            setSearchList('');
+        }else{
+            console.log("must be more than 0")
         }
-        // тут нужно добавить не только item, но и его пропсы(id)
-        listArr.push(searchList);
-        localStorage.setItem('list', JSON.stringify(listArr));
-        // console.log(listArr);
-        setListItems(storageData);
-        setSearchList('');
     }
     const listHandler=(e)=>{
         setSearchList(e.target.value);
@@ -98,7 +105,7 @@ function List(){
                                     </div>
                                     <button className="list__delete-btn"
                                     onClick={()=>{deleteListItem(item)}}>
-                                    -</button> 
+                                    <img src={cross}/> </button> 
                                 </li>
                                
                             ))}

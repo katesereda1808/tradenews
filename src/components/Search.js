@@ -10,27 +10,29 @@ function Search(){
     }
     const searchSubmitHandler=(e)=>{
         e.preventDefault();
-        store.dispatch({
-            type: 'SEARCH',
-            payload: {
-                search: search
-            }
-
-        })
-        console.log('submit')
+        if(search.length>0){
+            store.dispatch({
+                type: 'SEARCH',
+                payload: {
+                    search: search
+                }
+            })
+            setSearch('');
+            console.log('submit');
+        }else{
+            console.log(search.length)
+        }
+        
 
     }
     return(
         <div className="search">
             <form className="search__form" onSubmit={searchSubmitHandler}>
                 
-                <input onChange={searchHandler} className="search__input"></input>
+                <input onChange={searchHandler} className="search__input" value={search}></input>
                 <button type='submit' className="search__btn"><img src={loupe}/></button>
 
             </form>
-            
-
-
         </div>
 
     )

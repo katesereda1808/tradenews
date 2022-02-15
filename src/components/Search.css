@@ -18,6 +18,8 @@
     color: rgb(255, 255, 255);
     margin-right: 18px;
     cursor: text;
+    outline: none;
+    padding: 0px 5px;
     /* margin-right: 10px; */
     /* display: none; */
 }
@@ -27,4 +29,5 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+    outline: none;
 }
