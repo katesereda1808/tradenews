@@ -3,13 +3,20 @@ import NewsItem from "./NewsItem";
 import "./NewsPage.css";
 import store from "./redux/store";
 const NewsPage =()=> {
-    const [request, setRequest] = useState('stocks')
     const [news, setNews] = useState([]);
+    const initialRequest=()=>{
+        console.log('INITIAL_QUERY')
+        store.dispatch({
+            type: 'INITIAL_QUERY',
+            payload: {
+                search: 'stocks'
+            }
+        })
+    }
     useEffect(()=>{
+        initialRequest();
         store.subscribe(()=>{
             const globalState=store.getState();
-            // console.log(globalState);
-            setRequest(globalState.search);
                 fetch(`https://newsapi.org/v2/everything?q=${globalState.search}&apiKey=812129839886483c8a91c8ae3736295a`)
                 .then(resp=>{
                     if(resp.ok){
@@ -18,28 +25,22 @@ const NewsPage =()=> {
                         setNews(false);
                     }
                 })
-                    
                 .then(data=>{
                     if(data){
                         if(data.totalResults>0){
-                        console.log(data);
+                        // console.log(data);
                         setNews(data.articles)
                         }else{
                             setNews(false)
-                            console.log(news)
+                            // console.log(news)
                         }
-                        
-                        
-
-
-
                     }
-                
                 })
                 .catch((error)=>{
                     console.log('Error: '+ error);
                 })
         })
+        // console.log(request)
     }, [])
 
     // console.log(news);
